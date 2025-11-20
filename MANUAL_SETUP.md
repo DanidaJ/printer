@@ -7,7 +7,7 @@ If the automated `deploy.bat` script doesn't work, follow these manual steps:
 ### 1. Install Python Dependencies
 Open Command Prompt as Administrator and navigate to the printer folder:
 ```cmd
-cd C:\PrinterService
+cd C:\printer
 pip install Flask==3.0.0
 pip install waitress>=2.1.2
 pip install pywin32>=306

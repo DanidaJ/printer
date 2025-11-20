@@ -6,6 +6,8 @@ echo ====================================================
 echo           PRINTER SERVICE DEPLOYMENT
 echo ====================================================
 echo.
+echo Current directory: %CD%
+echo.
 
 echo Checking prerequisites...
 

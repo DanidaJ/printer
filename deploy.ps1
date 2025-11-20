@@ -9,6 +9,7 @@ Write-Host "=====================================================" -ForegroundCo
 Write-Host "           PRINTER SERVICE DEPLOYMENT" -ForegroundColor Cyan  
 Write-Host "=====================================================" -ForegroundColor Cyan
 Write-Host ""
+Write-Host "Current directory: $(Get-Location)" -ForegroundColor Yellow
 
 # Check if running as Administrator
 $currentPrincipal = New-Object Security.Principal.WindowsPrincipal([Security.Principal.WindowsIdentity]::GetCurrent())

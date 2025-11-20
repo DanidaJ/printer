@@ -2,6 +2,8 @@
 
 This guide will help you set up the Flask printer service on a Windows computer after downloading from GitHub.
 
+**Note**: You can extract the files to any folder location. Throughout this guide, we use `C:\printer\` as an example, but replace it with your actual folder path.
+
 ## Prerequisites
 
 - Windows 10 or later
@@ -13,7 +15,11 @@ This guide will help you set up the Flask printer service on a Windows computer 
 
 1. Go to: https://github.com/DanidaJ/printer
 2. Click **"Code"** → **"Download ZIP"**
-3. Extract the ZIP file to `C:\PrinterService\`
+3. Extract the ZIP file to any folder you prefer:
+   - `C:\printer\` (recommended)
+   - `C:\PrinterService\`
+   - `D:\MyPrinter\`
+   - Or any other location
 
 ## Step 2: Install Python
 
@@ -34,10 +40,11 @@ This guide will help you set up the Flask printer service on a Windows computer 
 ## Step 4: Automatic Setup
 
 1. Open **Command Prompt as Administrator**
-2. Navigate to the printer service folder:
+2. Navigate to the folder where you extracted the files:
    ```cmd
-   cd C:\PrinterService
+   cd C:\printer
    ```
+   (Replace `C:\printer` with your actual folder path)
 3. Run the deployment script:
    ```cmd
    deploy.bat
