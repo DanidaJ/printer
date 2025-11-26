@@ -50,8 +50,8 @@ class PrinterFlaskService(win32serviceutil.ServiceFramework):
         else:
             python = sys.executable
 
-        # Command: run waitress serve to host app:app
-        cmd = [python, "-m", "waitress", "serve", "--host=0.0.0.0", "--port=8080", "app:app"]
+        # Command: run waitress to host app:app
+        cmd = [python, "-m", "waitress", "--host=0.0.0.0", "--port=8080", "app:app"]
 
         servicemanager.LogInfoMsg(f"PrinterFlaskService: running {cmd}")
 
