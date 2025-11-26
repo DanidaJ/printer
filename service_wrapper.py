@@ -42,12 +42,15 @@ class PrinterFlaskService(win32serviceutil.ServiceFramework):
         # Ensure working directory is the app folder
         this_dir = os.path.dirname(os.path.abspath(__file__))
 
-        # Prefer using the same Python interpreter that runs the service script
-        python = sys.executable
+        # Get the correct Python executable - when running as Windows service,
+        # sys.executable points to pythonservice.exe, but we need python.exe
+        if sys.executable.endswith('pythonservice.exe'):
+            # Replace pythonservice.exe with python.exe
+            python = sys.executable.replace('pythonservice.exe', 'python.exe')
+        else:
+            python = sys.executable
 
-        # Command: run waitress-serve to host app:app
-        # Note: 'waitress' exposes console script 'waitress-serve'. We'll call it via module: -m waitress (serve) is not available in all versions,
-        # but calling the console script via sys.executable -m waitress is supported for recent installs. If that fails, adjust to the absolute path.
+        # Command: run waitress serve to host app:app
         cmd = [python, "-m", "waitress", "serve", "--host=0.0.0.0", "--port=8080", "app:app"]
 
         servicemanager.LogInfoMsg(f"PrinterFlaskService: running {cmd}")
